@@ -11,4 +11,8 @@ class ChitterApp < Sinatra::Base
         redirect 'sessions/new'
     end
 
+    get 'sessions/new' do
+        'You are logged in!'
+    end
+
 end 
