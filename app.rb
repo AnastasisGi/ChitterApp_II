@@ -1,7 +1,9 @@
 require 'sinatra'
-
+require 'sinatra/activerecord'
 class ChitterApp < Sinatra::Base 
 
+    register Sinatra::ActiveRecordExtension
+    
     get '/users/new' do
         erb :sign_up
     end
@@ -11,7 +13,7 @@ class ChitterApp < Sinatra::Base
         redirect 'sessions/new'
     end
 
-    get 'sessions/new' do
+    get '/sessions/new' do
         'You are logged in!'
     end
 
