@@ -1,12 +1,17 @@
-describe 'The sign up process' , :type=> :feature do
-    scenario 'A user can sign up with a email and password' do
-        visit '/users/new'
-        fill_in 'email', with: 'user@example.com'
-        fill_in 'password', with: 'test123'
-        fill_in 'name', with: 'anastasis'
-        fill_in 'username', with: 'anastasisgi'
-        click_button 'submit'
-        expect(current_path).to eq('/sessions/new')
-        expect(page).to have_content('You are logged in!')
-    end
+describe 'the process of authenticating a user ' , :type=> :feature do
+    
+        scenario 'a user can signup with username and password' do
+            visit '/users/new'
+            fill_in 'email' ,with: 'example2@example.com'
+            fill_in 'password' ,with: 'test1232'
+            fill_in 'name' ,with: 'anastasis2'
+            fill_in 'username' ,with: 'anastasisgi2'
+            click_button 'submit'
+            expect(page.current_path). to eq ('/sessions/new')
+            expect(page).to have_content('You are logged in!')
+        end
+
+
+
+
 end 
